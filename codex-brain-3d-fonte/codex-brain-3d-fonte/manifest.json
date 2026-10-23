@@ -1,0 +1,9 @@
+{
+  "id": "codex-brain-3d",
+  "name": "Codex Brain 3D",
+  "version": "0.1.0",
+  "minAppVersion": "1.6.0",
+  "description": "Explore perfis sincronizados do Codex Brain em uma rede 3D com origem navegável e painel de projetos.",
+  "author": "Codex Brain",
+  "isDesktopOnly": true
+}

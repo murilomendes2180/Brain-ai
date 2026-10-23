@@ -1,0 +1,13 @@
+'use strict';
+class Element {
+ constructor(tag,doc){this.tagName=tag.toUpperCase();this.ownerDocument=doc;this.children=[];this.style={};this.attributes={};this.listeners={};this.value='';this.textContent='';this.hidden=false;this.clientWidth=700;this.clientHeight=480;this.parentElement=null;this.className='';this.disabled=false;}
+ appendChild(e){e.parentElement=this;this.children.push(e);return e;} append(...es){es.forEach(e=>this.appendChild(e));} replaceChildren(...es){this.children=[];this.textContent='';this.append(...es);} remove(){if(this.parentElement)this.parentElement.children=this.parentElement.children.filter(e=>e!==this);}
+ setAttribute(k,v){this.attributes[k]=String(v);}getAttribute(k){return this.attributes[k]??null;}
+ addEventListener(k,f){(this.listeners[k]??=[]).push(f);}removeEventListener(k,f){this.listeners[k]=(this.listeners[k]||[]).filter(x=>x!==f);}dispatch(k,extra={}){for(const f of this.listeners[k]||[])f({target:this,clientX:0,clientY:0,pointerId:1,preventDefault(){},...extra});}
+ setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:this.clientWidth,height:this.clientHeight};}
+ getContext(){return {setTransform(){},clearRect(){},beginPath(){},moveTo(){},lineTo(){},stroke(){},arc(){},fill(){},fillRect(){},fillText(){},setLineDash(){},measureText(t){return {width:t.length*6}},createRadialGradient(){return {addColorStop(){}}}};}
+ get allText(){return this.textContent+this.children.map(e=>e.allText).join(' ');}
+}
+function fakeDocument(){let next=0;const frames=new Map(),observers=[];const doc={hidden:false,listeners:{},createElement(t){return new Element(t,this)},addEventListener:Element.prototype.addEventListener,removeEventListener:Element.prototype.removeEventListener};
+ const win={frames,observers,devicePixelRatio:1,requestAnimationFrame:f=>{frames.set(++next,f);return next;},cancelAnimationFrame:id=>frames.delete(id),step(t=16){const fs=[...frames.values()];frames.clear();fs.forEach(f=>f(t));},matchMedia:()=>({matches:false,addEventListener(){},removeEventListener(){}}),getComputedStyle:()=>({getPropertyValue:k=>({'--text-normal':'#ddd','--text-muted':'#aaa','--background-primary':'#222','--background-modifier-border':'#555','--color-cyan':'#5bd','--color-purple':'#b9e','--color-orange':'#e96','--color-green':'#6b9'}[k]||''),color:'#ddd'}),ResizeObserver:class{constructor(f){this.callback=f;this.active=true;observers.push(this)}observe(){}disconnect(){this.active=false;}},MutationObserver:class{constructor(f){this.callback=f;this.active=true;observers.push(this)}observe(){}disconnect(){this.active=false;}}};doc.defaultView=win;doc.body=doc.createElement('body');return doc;}
+module.exports={Element,fakeDocument};

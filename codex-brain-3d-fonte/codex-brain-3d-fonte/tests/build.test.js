@@ -1,0 +1,4 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');const {build}=require('../scripts/build');const {api}=require('./helpers/fake-obsidian');
+test('built_entry_loads_with_fake_obsidian',()=>{const a=build(),b=build();assert.equal(a,b);const context={module:{exports:{}},require:name=>{assert.equal(name,'obsidian');return api},setTimeout,clearTimeout,console};vm.runInNewContext(a,context);assert.equal(typeof context.module.exports,'function');assert.equal(typeof context.module.exports.prototype.onload,'function');assert.ok(!a.includes('new Function'));});
+test('manifest_matches_package',()=>{const m=JSON.parse(fs.readFileSync('manifest.json'));assert.equal(m.id,'codex-brain-3d');assert.equal(m.version,'0.1.0');assert.equal(m.minAppVersion,'1.6.0');assert.equal(m.isDesktopOnly,true);assert.ok(fs.existsSync('dist/codex-brain-3d/styles.css'));});

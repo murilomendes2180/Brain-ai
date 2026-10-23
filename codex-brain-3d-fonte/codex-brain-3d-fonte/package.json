@@ -1,0 +1,1 @@
+{"name":"codex-brain-3d","version":"0.1.0","private":true,"engines":{"node":">=20"},"scripts":{"test":"node --test tests/*.test.js","build":"node scripts/build.js"}}
