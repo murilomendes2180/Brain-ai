@@ -1,9 +1,9 @@
 {
-  "vault": "C:\\Users\\Murilo\\Documents\\Segundo-Cerebro-Obsidian\\Segundo-Cerebro-Obsidian",
+  "vault": "C:/Users/YourName/Documents/ObsidianVault",
   "projects": [
     {
-      "path": "C:\\Users\\Murilo\\Documents\\alethe-agents-main",
-      "folder": "Alethe"
+      "path": "C:/Projects/YourProject",
+      "folder": "YourProject"
     }
   ],
   "refresh_every_days": 7,
