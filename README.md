@@ -60,7 +60,7 @@ Os testes do plugin simulam APIs do Obsidian/DOM; não substituem testes no apli
 
 Este repositório contém código e documentação, não um cofre pessoal. Não publique .brain/, bancos de dados, perfis privados, notas do Obsidian, logs, credenciais ou caminhos locais. Os dados gerados podem conter informações pessoais e conclusões não verificadas.
 
-O histórico da branch main será reiniciado para manter apenas o estado atual do projeto. Clones e forks feitos antes da limpeza podem continuar com versões anteriores. O GitHub também pode manter referências em cache; a limpeza dessas cópias é um processo separado.
+Uma revisão dos seis commits atualmente alcançáveis pela branch main não encontrou a pasta do cofre pessoal. Os commits antigos, porém, ainda fazem parte do histórico. Reescrever a branch os remove do histórico publicado, mas clones e forks podem continuar com cópias anteriores. Referências em cache do GitHub exigem tratamento separado.
 
 ## Estado e contribuições
 
