@@ -32,8 +32,8 @@ No PowerShell:
 
     cd codex-brain-project-study
     python brain.py init
-    python brain.py study --project "C:caminhoparaseuprojeto"
-    python sync_obsidian.py --project "C:caminhoparaseuprojeto" --vault "C:caminhoparaseucofre" --folder "Projetos"
+    python brain.py study --project "C:/path/to/your/project"
+    python sync_obsidian.py --project "C:/path/to/your/project" --vault "C:/path/to/your/ObsidianVault" --folder "Projetos"
 
 O comando study lê o projeto-alvo e grava dados na instalação local do Brain. Revise permissões e resultados antes de sincronizar.
 
