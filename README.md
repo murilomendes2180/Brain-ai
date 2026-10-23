@@ -1,8 +1,8 @@
 # Brain AI
 
-Um projeto experimental de memória persistente para trabalho com repositórios, integrado ao Obsidian e acompanhado por uma visualização 3D navegável.
+Um projeto experimental de memória persistente para trabalhar com repositórios usando o Codex, integrado ao Obsidian e acompanhado por uma visualização 3D navegável.
 
-O Brain AI reúne um núcleo em Python que estuda projetos e mantém perfis e memórias locais, e um plugin do Obsidian que transforma perfis sincronizados em uma rede 3D animada. A visualização permite explorar o conhecimento e abrir as notas de origem.
+O Brain AI reúne um núcleo em Python que estuda projetos e mantém perfis e memórias locais e um plugin do Obsidian que transforma perfis sincronizados em uma rede 3D animada. A visualização permite explorar o conhecimento e abrir as notas de origem.
 
 > O Brain AI não treina nem altera o modelo do Codex. Os perfis são gerados por sessões do Codex e devem ser revisados: podem conter fatos, inferências ou pontos não confirmados.
 
@@ -15,7 +15,7 @@ O Brain AI reúne um núcleo em Python que estuda projetos e mantém perfis e me
 
 ## Como funciona
 
-1. O núcleo recebe o caminho de um repositório e solicita ao Codex um estudo. O comando study usa sandbox read-only no projeto-alvo; run usa workspace-write e pode alterar arquivos.
+1. O núcleo recebe o caminho de um repositório e solicita ao Codex um estudo. O comando study usa sandbox somente leitura no projeto-alvo; run usa workspace-write e pode alterar arquivos.
 2. O Brain guarda perfis, memórias e registros na pasta local .brain/. Essa pasta pertence à instalação e não deve ser publicada.
 3. O sincronizador exporta os perfis escolhidos para uma pasta do cofre Obsidian.
 4. O plugin lê as notas de perfil configuradas no cofre e apresenta títulos, seções e links em 3D.
@@ -60,7 +60,7 @@ Os testes do plugin simulam APIs do Obsidian/DOM; não substituem testes no apli
 
 Este repositório contém código e documentação, não um cofre pessoal. Não publique .brain/, bancos de dados, perfis privados, notas do Obsidian, logs, credenciais ou caminhos locais. Os dados gerados podem conter informações pessoais e conclusões não verificadas.
 
-A cópia do cofre foi removida da versão atual, mas já esteve no histórico Git. Apagar uma pasta em um novo commit não remove versões antigas. Antes de ampliar a divulgação, revise o histórico e arquivos de configuração. Se dados sensíveis foram expostos, siga o processo do GitHub para remoção do histórico; cópias clonadas ou bifurcadas podem exigir limpeza separada.
+O histórico da branch main será reiniciado para manter apenas o estado atual do projeto. Clones e forks feitos antes da limpeza podem continuar com versões anteriores. O GitHub também pode manter referências em cache; a limpeza dessas cópias é um processo separado.
 
 ## Estado e contribuições
 
@@ -68,4 +68,4 @@ O projeto está em desenvolvimento. Instalação, funcionamento visual, integra�
 
 ## Licença
 
-Ainda não há uma licença na raiz deste repositório. Até que o mantenedor escolha e adicione uma licença, não presuma que o público tenha permissão geral para reutilizar, modificar ou redistribuir o código. Consulte [Choose a License](https://choosealicense.com/) antes de anunciar o projeto como open source.
+Este projeto está licenciado sob a [MIT License](./LICENSE).
